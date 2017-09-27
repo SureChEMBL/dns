@@ -1,0 +1,36 @@
+Source: golang-github-miekg-dns
+Section: devel
+Priority: extra
+Maintainer: pkg-go <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Tonnerre LOMBARD <tonnerre@ancient-solutions.com>, 
+           Tim Potter <tpot@hpe.com>,
+           Martín Ferrari <tincho@debian.org>,
+Build-Depends: debhelper (>= 9), dh-golang (>= 1.17~), golang-any (>= 2:1.5.1~)
+Standards-Version: 3.9.8
+Homepage: https://github.com/miekg/dns
+Vcs-Git: https://anonscm.debian.org/git/pkg-go/packages/golang-github-miekg-dns.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-go/packages/golang-github-miekg-dns.git
+XS-Go-Import-Path: github.com/miekg/dns
+Testsuite: autopkgtest-pkg-go
+
+Package: golang-github-miekg-dns-dev
+Architecture: all
+Depends: ${misc:Depends}, golang-any (>= 2:1.5.1~)
+Breaks: golang-dns-dev (<< 0.0~git20161006.0.fc4e1e2-1~)
+Replaces: golang-dns-dev (<< 0.0~git20161006.0.fc4e1e2-1~)
+Provides: golang-dns-dev
+Description: DNS protocol library for Go
+ Complete and usable DNS library. All widely used Resource Records
+ are supported, including the DNSSEC types. It follows a lean and
+ mean philosophy.  If there is stuff you should know as a DNS
+ programmer there isn't a convenience function for it. Server side
+ and client side programming is supported, i.e. you can build
+ servers and resolvers with it.
+
+Package: golang-dns-dev
+Section: oldlibs
+Architecture: all
+Depends: golang-github-miekg-dns-dev
+Description: transitional package for golang-github-miekg-dns-dev
+ This is a transitional package to ease upgrades to the
+ golang-github-miekg-dns-dev. It can be safely removed.
